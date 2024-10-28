@@ -1,0 +1,36 @@
+// Dependency graph for bash
+digraph {
+	bash -> libc6
+	libc6 -> "libgcc-s1"
+	"libgcc-s1" -> "gcc-12-base"
+	"libgcc-s1" -> libc6
+	"libgcc-s1" -> "libgcc-s1"
+	"libgcc-s1" -> libcrypt1
+	libcrypt1 -> libc6
+	libcrypt1 -> "libgcc-s1"
+	libcrypt1 -> "gcc-12-base"
+	libcrypt1 -> libcrypt1
+	libc6 -> "gcc-12-base"
+	libc6 -> libc6
+	libc6 -> libcrypt1
+	bash -> "libgcc-s1"
+	bash -> "gcc-12-base"
+	bash -> libcrypt1
+	bash -> libtinfo6
+	libtinfo6 -> libc6
+	libtinfo6 -> "libgcc-s1"
+	libtinfo6 -> "gcc-12-base"
+	libtinfo6 -> libcrypt1
+	bash -> "base-files"
+	"base-files" -> <awk>
+	"base-files" -> libc6
+	"base-files" -> "libgcc-s1"
+	"base-files" -> "gcc-12-base"
+	"base-files" -> libcrypt1
+	bash -> <awk>
+	bash -> debianutils
+	debianutils -> libc6
+	debianutils -> "libgcc-s1"
+	debianutils -> "gcc-12-base"
+	debianutils -> libcrypt1
+}
