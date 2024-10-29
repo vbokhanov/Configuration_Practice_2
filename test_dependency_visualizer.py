@@ -8,11 +8,11 @@ class TestDependencyVisualizer(unittest.TestCase):
         self.assertEqual(config['package_name'], 'bash')
 
     def test_get_dependencies(self):
-        dependencies = get_dependencies('bash')
+        dependencies = get_dependencies('http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/Packages.gz', 'bash')
         self.assertIn('libc6', dependencies)
 
     def test_build_dependency_graph(self):
-        graph = build_dependency_graph('bash')
+        graph = build_dependency_graph('http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/Packages.gz', 'bash')
         self.assertIn('digraph', graph.source)
 
 if __name__ == '__main__':

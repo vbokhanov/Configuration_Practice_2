@@ -2,5 +2,5 @@
     <graphviz_path>/usr/bin/dot</graphviz_path>
     <package_name>bash</package_name>
     <output_file>output.dot</output_file>
-    <!-- <repository_url>http://repo</repository_url> -->
+    <repository_url>http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/Packages.gz</repository_url>
 </config>
